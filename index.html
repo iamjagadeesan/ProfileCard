@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/c45442c024.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <title>Profile Card</title>
+  <style>
+    :root{
+  --COLOR : darkviolet;
+  --BGCOLOR: rgb(0,0,0,0.9);
+}
+.hidden{
+  visibility: hidden;
+}
+.flex{
+  display: flex;
+  gap: 1.5rem;
+}
+
+h5{
+  margin: 0;
+  padding: 0;
+}
+html{
+  width: 100vw;
+  overflow-x: hidden;
+}
+main{
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 2rem;
+}
+input{
+  color: var(--COLOR);
+  background-color: transparent;
+  outline: none;
+  border-radius: .5rem;
+  padding: 0 4px;
+  font-size: 1rem;
+}
+input:focus{
+  outline: 1px solid var(--COLOR);
+}
+li,ul{
+  list-style:none;
+}
+html{
+  background-color: black;
+}
+body{
+  backdrop-filter: blur(1rem);
+  max-width: 100vw;
+  min-height: 100vh;
+  margin:0;
+  padding:0;
+  color:var(--COLOR);
+  font-family:sans-serif;
+  background-image: var(--BGCOLOR);
+  overflow-x: hidden;
+}
+header{
+  margin: 0;
+  background-color:rgb(0,0,0,.2);
+  padding:0rem 2rem;
+  display:flex;
+  flex-direction:row;
+  align-items:center;
+  justify-content:space-between;
+  overflow: hidden;
+  }
+  #topLine{
+    margin: 0;
+    padding: 0;
+    height: 2px;
+    width: 100vw;
+    background-image: linear-gradient(to right,var(--COLOR),transparent);
+  }
+  #download{
+    color: white;
+    cursor: pointer;
+    padding: 2px;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    transition: .2s ease-in-out;
+  }
+  #download:hover{
+    border : 2px solid white;
+  }
+#shortname{
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+  font-style:italic;
+  font-family:sans-serif;
+  letter-spacing:1px;
+  opacity:100%;
+}
+#shortname::first-letter{
+  color:white;
+}
+#About{
+  text-transform: none;
+  width: 25vw;
+  height: 8rem;
+}
+#experience{
+  text-transform: uppercase;
+}
+#Mail,#Location,#Linkedin,#Facebook,#Whatsapp,#Instagram,#Shortname,#Name,#Title,#Experience,#AddTechStack{
+height: 2rem;
+margin-left: 1rem;
+}
+#links{
+  margin: 0;
+  padding: 0;
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.linkss{
+  padding: 1rem;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  cursor:pointer;
+  font-weight:600;
+  letter-spacing:1px;
+}
+.linkss:hover{
+  color: white;
+}
+#ColorSelection{
+  padding:.5rem 2rem 0 0;
+  display:flex;
+  justify-content:end;
+  align-items: center;
+  gap: .5rem;
+  font-weight: 600;
+}
+select{
+  background-color:black;
+  color:var(--COLOR);
+  padding:4px;
+  border:none;
+  border-radius:.5rem;
+}
+select:focus{
+  outline:2px solid var(--COLOR);
+}
+
+option{
+  background-color:black;
+  font-weight:600;
+  font-family:sans-serif;
+}
+#leftTop{
+  padding:2rem;
+  display:flex;
+  flex-direction: row;
+  align-items:center;
+  justify-content: space-between;
+  gap:1rem;
+}
+#imageOuter{
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+   border-radius:50%;
+   border: .5rem;
+  border-top: solid lightgray;
+  border-left: solid lightgray;
+  border-right: solid var(--COLOR);
+  border-bottom: solid var(--COLOR);
+}
+#image{
+  cursor: pointer;
+  background-image: url('https://t4.ftcdn.net/jpg/04/81/13/43/360_F_481134373_0W4kg2yKeBRHNEklk4F9UXtGHdub3tYk.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 15rem;
+  width: 15rem;
+  margin: .5rem;
+  border-radius:50%;
+}
+#imageInput{
+  display: none;
+}
+#content{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+}
+h1{
+  font-size: 2.5rem;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+}
+#title{
+  color:white;
+  font-weight: 400;
+  text-transform:uppercase;
+}
+#about{
+  font-family: arial;
+  font-size: .9rem;
+  width: 100%;
+  opacity: 75%;
+  letter-spacing: 1px;
+  line-padding: 1px;
+  font-weight: 100;
+  color: white;
+}
+#left{
+  width: 50%;
+}
+#right{
+  padding: 1rem;
+  width: 50vw;
+}
+
+#education{
+  background-image: var(--BGCOLOR);
+  margin: 0 1rem 0 2rem;
+  padding: 1rem;
+  border-top: 1px solid lightgray;
+  border-right: .2rem solid var(--COLOR);
+  border-bottom: .2rem solid var(--COLOR);
+  border-left: 1px solid lightgray;
+  border-radius: 1rem;
+}
+#edu > h2{
+  margin: 0;
+  padding: 0;
+}
+#eduBox{
+  padding-left: 2rem;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+#Masters,#Bachelors{
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  height: min-content;
+}
+#Masters::before,#Bachelors::before{
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+  content: '';
+  position: absolute;
+  height: 80%;
+  width: 2px;
+  background-image: linear-gradient(to bottom,var(--COLOR),transparent);
+  transform: translateX(-1.2rem) translateY(1.2rem);
+  margin-top: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#Masters h4, #Masters h5,#Bachelors h4, #Bachelors h5{
+  color: lightgray;
+  font-weight: 400;
+}
+
+#mcap,#bcap{
+  color: transparent;
+  font-size: .8rem;
+  border: 2px solid var(--COLOR);
+  position: absolute;
+  transform: translateX(-1.65rem) translateY(.1rem) rotate(45deg);
+  top: 1.1rem;
+}
+
+.scroll-item > li, #addTechStack{
+  text-transform: uppercase;
+  cursor: pointer;
+  font-size: .8rem;
+  width: max-content;
+  padding: .4rem;
+  font-weight: 700;
+  color: white;
+  background-color: var(--COLOR);
+  border-radius: .4rem;
+  opacity: 80%;
+}
+
+
+.scroller-inner{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+#addTechStack{
+  margin-left: 2.5rem;
+  background-color: white;
+  color: var(--COLOR);
+}
+#addTechStack::first-letter{
+  font-size: 1rem;
+}
+/* Scroller effect */
+
+/*
+.scroll-item > li{
+  font-size: .8rem;
+  width: max-content;
+  padding: .4rem;
+  font-weight: 700;
+  color: white;
+  background-color: var(--COLOR);
+  border-radius: .4rem;
+  opacity: 80%;
+}
+
+.scroller{
+  max-width: 100%;
+  overflow: hidden;
+  margin-right: 1rem;
+}
+
+
+.scroller-inner{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.scroller[data-animated="true"]{
+  overflow: hidden;
+  mask: linear-gradient(90deg,transparent,white,white,transparent);
+}
+
+.scroller[data-animated="true"] .scroller-inner{
+  width: max-content;
+  flex-wrap: nowrap;
+  animation: scroll 20s linear infinite;
+}
+
+
+@keyframes scroll {
+  to{
+    transform: translate(calc(-49% - .2rem));
+  }
+}
+
+*/
+
+@media (min-width: 800px) {
+  ::-webkit-scrollbar {
+  width: 6px; 
+  height: 4px; 
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; 
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--COLOR);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: white;
+}
+}
+
+@media (max-width: 800px) {
+  .hiddenLink{
+    display: none;
+  }
+  main{
+    flex-direction: column;
+  }
+  #left{
+    width: 100%;
+  }
+  #right{
+    width: 100%;
+  }
+  #eduBox{
+    padding-bottom: 1rem;
+  }
+}
+
+@media (max-width: 500px) {
+  body{
+    overflow-x: hidden;
+  }
+  header{
+    padding: .5rem;
+  }
+  #shortname{
+    font-size: 1rem;
+  }
+  main{
+    flex-direction: column;
+  }
+  #imageOuter{
+  width: min-content;
+  height: min-content;
+  height: 100%;
+   border-radius:50%;
+   border: .5rem;
+  border-top: solid lightgray;
+  border-left: solid lightgray;
+  border-right: solid var(--COLOR);
+  border-bottom: solid var(--COLOR);
+}
+#image{
+  cursor: pointer;
+  background-image: url('https://t4.ftcdn.net/jpg/04/81/13/43/360_F_481134373_0W4kg2yKeBRHNEklk4F9UXtGHdub3tYk.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 15rem;
+  width: 15rem;
+  margin: .5rem;
+  border-radius:50%;
+}
+  #leftTop{
+    padding: 1rem;
+    flex-direction: column;
+    justify-content: center;
+  }
+  #left{
+    width: 100%;
+  }
+  #right{
+    width: 100%;
+  }
+  #content{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+  }
+  #eduBox{
+    flex-direction: column;
+    padding-bottom: 1rem;
+  }
+  #links{
+    display: none;
+  }
+  #education{
+    margin: 0 1rem 0 1rem;
+  }
+  #addTechStack{
+  margin-top: 1rem;
+  margin-left: 0;
+  }
+  .scroller-inner{
+    margin: 0;
+    padding: 0 2rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  }
+}
+  </style>
+</head>
+<body>
+  <header>
+    <h2 id="shortname" tooltip="click to edit">Short name</h2>
+    <input id="Shortname" type="text" />
+
+    <nav>
+      <li id="links">
+        <ul id="location" class="linkss"><i class="fas fa-map-marker-alt"></i> Location</ul>
+            <input id="Location" placeholder="Location" />
+        <ul id="mail" class="linkss"><i class="fas fa-envelope"></i><span class="hiddenLink"> Mail</span></ul>
+          <input id="Mail" placeholder="Mail" />
+        <ul id="linkedin" class="linkss"><i class="fab fa-linkedin"></i><span class="hiddenLink"> Linkedin</span></ul>
+          <input id="Linkedin" placeholder="Linkedin" />
+        <ul id="whatsapp" class="linkss"><i class="fab fa-whatsapp"></i><span class="hiddenLink">Whatsapp</span></ul>
+          <input id="Whatsapp" placeholder="Whatsapp"  />
+        <ul id="facebook" class="linkss"><i class="fab fa-facebook"></i><span class="hiddenLink">Facebook</span></ul>
+          <input id="Facebook" placeholder="Facebook" />
+        <ul id="instagram" class="linkss"> <i class="fa-brands fa-instagram"></i> <span class="hiddenLink">Instagram</span></ul>
+          <input id="Instagram" placeholder="Instagram" />
+        <ul id="download" class="linkss"><i class="material-icons">download</i></ul>
+      </li>
+    </nav>
+  </header>
+  <div id="topLine"></div>
+
+  <div id="ColorSelection">
+    <label>Color : </label>
+    <select>
+      <option value="#6d28d9" >violet</option>
+      <option value="#dc2626">Red</option>
+      <option value="#1d4ed8">Blue</option>
+      <option value="#ea580c">Orange</option>
+      <option value="#16a34a">Green</option>
+    </select>
+  </div>
+  
+  <main>
+    <div id="left">
+      <section id="leftTop">
+        <div id="imageOuter">
+          <div id="image"></div>
+        </div>
+        <input id="imageInput" type="file" name="" accept="image/*">
+        <span id="content">
+          <h1 id="name"></h1> <input id="Name" type="text" />
+          <h3 id="title"></h3> <input id="Title" type="text" />
+        <p id="about"></p> <input id="About"  type="text"/>
+        </span>
+        </section>
+
+        <article id="education">
+          <div id="edu">
+        <h2 id="experience">EDUCATION</h2> <input id="Experience" type="text" name="">
+        <article id="eduBox">
+          <div id="Masters">
+            <i id="mcap" class="fa-solid fa-diamond"></i>
+            <h3 id="experienceFirst">Master of Computer Applications</h3> <input id="ExperienceFirst" type="type" name="">
+            <h4 id="experienceSecond">SRM Insititute of Science and Technoloy</h4><input id="ExperienceSecond" type="text" name="">
+            <span class="flex"> <h5 id="experienceThird">CGPA - 80</h5> <input id="ExperienceThird" type="text" name="">
+              <h5 id="experienceFourth"><strong>2022 - 2024</strong></h5> <input id="ExperienceFourth" type="text" name="">
+            </span>
+          </div>
+          <div id="Bachelors">
+            <i id="bcap" class="fa-solid fa-diamond"></i>
+            <h3 id="experienceFifth">Bachelor of Computer Science</h3>
+            <input id="ExperienceFifth" type="text" name="">
+            <h4 id="experienceSixth">Annaivailankanni arts and science college, Thanjavur</h4>
+            <input id="ExperienceSixth" type="text" name="">
+            <span class="flex"> 
+              <h5 id="experienceSeventh">Percentage - 80</h5>
+              <input id="ExperienceSeventh" type="text" name="">
+               <h5 id="experienceEighth"><strong>2019 - 2022</strong></h5>
+               <input id="ExperienceEighth" type="text" name="">
+             </span>
+          </div>
+        </article>
+        <div>
+        </article>
+        </article>
+
+    </div>
+    <div id="right">
+      <h2>TECH STACK</h2>
+      <div class="scroller">
+        <ul class="scroll-item scroller-inner">
+          <li id="techStack1">HTML</li> <input id="TechStack1" type="text" name="">
+          <li id="techStack2">CSS</li> <input id="TechStack2" type="text" name="">
+          <li id="techStack3">TAILWINDCSS</li> <input id="TechStack3" type="text" name="">
+          <li id="techStack4">JAVASCRIPT</li> <input id="TechStack4" type="text" name="">
+          <li id="techStack5">REACTJS</li> <input id="TechStack5" type="text" name="">
+          <li id="techStack6">ANGULAR</li> <input id="TechStack6" type="text" name="">
+        </ul>
+          <span id="addTechStack"> + ADD</span> <input id="AddTechStack" type="text" name="">
+      </div>
+      <h2>PROJECTS</h2>
+    </div>
+  </main>
+  <script>
+    document.querySelectorAll('[title]').forEach(el => {
+      el.removeAttribute('title'); 
+    });
+
+
+const details = {
+  color:'#6d28d9',
+  shortname:'',
+  name:'',
+  title:'',
+  about:'',
+  location:'',
+  mail:'',
+  linkedin:'',
+  whatsapp:'',
+  facebook:'',
+  instagram:'',
+  experience:'',
+  techstack:['HTML','CSS','JAVASCRIPT','TAILWINDCSS','AngularJS','ReactJS'],
+}
+
+const techstack = [{
+name:'techStack1',
+change:true
+},{
+name:'techStack2',
+change:true
+},{
+name:'techStack3',
+change:true
+},{
+name:'techStack4',
+change:true
+},{
+name:'techStack5',
+change:true
+},{
+name:'techStack6',
+change:true
+}
+]
+
+const BGcolor = {
+  '#6d28d9':'linear-gradient(to right bottom, #101010, #17142e, #1c154c, #25116a, #340087)',
+  '#dc2626':'linear-gradient(to right bottom, #101010, #271629, #4b1032, #700026, #870300)',
+  '#1d4ed8':'linear-gradient(to right bottom, #101010, #17162c, #191b49, #141f67, #002387)',
+  '#ea580c':'linear-gradient(to right bottom, #101010, #291929, #4e1931, #721825, #852d00)',
+  '#16a34a':'linear-gradient(to right bottom, #101010, #0e2a3d, #004a5d, #006a5b, #008732)'
+} 
+
+const links = [
+  {
+    name:'name',
+    title:'Enter your name',
+    icon:'',
+    change:true
+  },
+  {
+    name:'title',
+    title:'Enter your position or role',
+    icon:'',
+    change:true
+  },
+  {
+    name:'about',
+    title:'let\'s describe about your self', 
+    icon:'',
+    change:true
+  },
+  {
+    name:'shortname',
+    title:'Enter your nick name or shortname',
+    icon:'',
+    change:true
+  },
+  {
+    name:'mail',
+    title:'Enter your mail address',
+    icon:''
+  },
+  {
+    name:'linkedin',
+    title:'linkedin.com/in/username/  Enter username only',
+    icon:''
+  },
+  {
+    name:'whatsapp',
+    title:'Enter your whatsapp number',
+    icon:''
+  },
+  {
+    name:'facebook',
+    title:'Enter your facebook username',
+    icon:''
+  },
+  {
+    name:'instagram',
+    title:'Enter your instagram username',
+    icon:''
+  },
+  {
+    name:'experience',
+    title:'Enter the title Experience or Education',
+    icon:'',
+    change:true
+  },
+  {
+    name:'experienceFirst',
+    title:'Enter the title Experience or Education',
+    icon:'',
+    change:true
+  },
+  {
+    name:'experienceSecond',
+    title:'Enter the title Experience or Education',
+    icon:'',
+    change:true
+  },
+  {
+    name:'experienceThird',
+    title:'Enter the title Experience or Education',
+    icon:'',
+    change:true
+  },
+  {
+    name:'experienceFourth',
+    title:'Enter the title Experience or Education',
+    icon:'',
+    change:true
+  },
+  {
+    name:'experienceFifth',
+    title:'Enter the title Experience or Education',
+    icon:'',
+    change:true
+  },
+  {
+    name:'experienceSixth',
+    title:'Enter the title Experience or Education',
+    icon:'',
+    change:true
+  },
+  {
+    name:'experienceSeventh',
+    title:'Enter the title Experience or Education',
+    icon:'',
+    change:true
+  },
+  {
+    name:'experienceEighth',
+    title:'Enter the title Experience or Education',
+    icon:'',
+    change:true
+  }
+];
+
+
+links.forEach((link)=>{
+let element = document.getElementById(link.name);
+let input = document.getElementById(link.name[0].toUpperCase()+link.name.split("").slice(1).join(''));
+
+input.title = link.title;
+input.style.display = 'none';
+
+element.addEventListener("click",(e)=>{
+  element.style.display = "none";
+  input.style.display = "block";
+  input.focus();
+});
+
+input.addEventListener("keydown",(e)=>{
+if(e.key=='Enter'){
+  element.style.display = "block";
+  input.style.display = "none";
+  console.log(details);
+  if(link?.change && input.value.trim()!==''){
+  details[link.name] = input.value.trim();
+    element.innerHTML = input.value;
+  }
+}
+});
+
+})
+
+const Name = document.getElementById('name');
+Name.textContent = "name";
+
+const Title = document.getElementById('title');
+Title.textContent = 'Title';
+
+const About = document.getElementById('about');
+
+About.textContent = "Hi iam a Front end developer with a strong foundation in HTML CSS and JAVASCRIPT and frameworks like ReactJS, AngularJS . I recently completed my Master's in Computer Appplications at SRM College.";
+
+let loc = document.getElementById('location');
+let Location = document.getElementById("Location");
+
+loc.title='';
+Location.title='';
+Location.style.display = 'none';
+
+Location.onchange =function(){
+details.location = Location.value.trim();
+loc.innerHTML = '<i class="fas fa-map-marker-alt"></i> ' + details.location;
+}
+
+loc.addEventListener("click",(e)=>{
+  loc.style.display = "none";
+  Location.style.display = "block";
+  Location.focus();
+});
+
+Location.addEventListener("keydown",(e)=>{
+if(e.key=='Enter'){
+  loc.style.display = "flex";
+  loc.style.alignItems = "center";
+  Location.style.display = "none";
+  console.log(details);
+}
+});
+
+
+// color and background color
+const colorOption = document.querySelector('select');
+document.body.style.setProperty('--BGCOLOR',Object.entries(BGcolor)[0][1]);
+
+colorOption.onchange = function () {
+document.body.style.setProperty('--COLOR',colorOption.value);
+document.body.style.setProperty('--BGCOLOR',BGcolor[colorOption.value]);
+details['color']=colorOption.value;
+}
+
+techstack.forEach((link,index) =>
+{
+let element = document.getElementById(link.name);
+let input = document.getElementById(link.name[0].toUpperCase()+link.name.split("").slice(1).join(''));
+
+input.title = link.title;
+input.style.display = 'none';
+
+element.addEventListener("click",(e)=>{
+  element.style.display = "none";
+  input.style.display = "block";
+  input.focus();
+});
+
+input.addEventListener("keydown",(e)=>{
+if(e.key=='Enter'){
+  element.style.display = "block";
+  input.style.display = "none";
+  console.log(details);
+  if(link?.change && input.value.trim()!==''){
+  details.techstack[index] = input.value;
+    element.innerHTML = input.value;
+    console.log(index);
+  }
+}
+});
+})
+
+const addTechStack = document.getElementById('addTechStack');
+const AddTechStack = document.getElementById('AddTechStack');
+const scrollerInner = document.querySelector('.scroller-inner');
+AddTechStack.style.display = 'none';
+
+addTechStack.addEventListener("click",(e)=>{
+  addTechStack.style.display = 'none';
+  AddTechStack.style.display = 'block';
+  AddTechStack.focus();
+  AddTechStack.addEventListener("keydown", (e) => {
+    if(e.key == 'Enter' && AddTechStack.value!=''){
+      details.techstack.push(AddTechStack.value);
+    const techstackObj = {
+      name:'techstack' + (techstack.length + 1),
+      change:true
+    }
+      techstack.push(techstackObj);
+      console.log(techstackObj);
+      console.log(techstack);
+      console.log(details)
+      const child = document.createElement('li');
+      child.setAttribute('id','techStack'+techstack.length);
+      child.innerHTML = AddTechStack.value;
+      AddTechStack.value = '';
+      const childInput = document.createElement('input');
+      childInput.setAttribute('type','text');
+      childInput.setAttribute('id','TechStack'+techstack.length);
+      childInput.style.display = 'none';
+      addTechStack.style.display = 'block';
+      AddTechStack.style.display = 'none';
+      scrollerInner.appendChild(child);
+      scrollerInner.appendChild(childInput);
+    }
+  });
+});
+
+/* set image */
+
+const image = document.getElementById('image');
+const imageInput = document.getElementById('imageInput');
+
+image.addEventListener('click',()=>{
+  imageInput.click();
+});
+
+imageInput.addEventListener('change',(event)=>{
+  const file = event.target.files[0];
+  if(file){
+    const reader = new FileReader();
+    reader.onload = e => {
+      image.style.backgroundImage = `url('${e.target.result}')`;
+    };
+    reader.readAsDataURL(file);
+  }
+});
+
+const download = document.getElementById('download');
+
+/*    Scrolling Effect    */
+
+// const scrollers = document.querySelectorAll(".scroller");
+
+
+// if (scrollers.length > 0 && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+//   addAnimation();
+// }
+
+
+// function addAnimation() {
+//   scrollers.forEach(scroller => {
+//     scroller.setAttribute("data-animated", true);
+
+//     const scrollerInner = scroller.querySelector('.scroller-inner');
+//     const scrollerContent = Array.from(scrollerInner.children);
+
+//     console.log(scrollerContent);
+
+//     scrollerContent.forEach(item => {
+//       const duplicatedItem = item.cloneNode(true);
+//       duplicatedItem.setAttribute('aria-hidden', true);
+//       scrollerInner.appendChild(duplicatedItem);
+//     });
+//   });
+// }
+
+  </script>
+</body>
+</html>
