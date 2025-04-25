@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/c45442c024.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <title>Profile Card</title>
+</head>
+<body>
+  <header>
+    <h2 id="shortname" tooltip="click to edit">Short name</h2>
+    <input id="Shortname" type="text" />
+
+    <nav>
+      <li id="links">
+      	<ul id="location" class="linkss"><i class="fas fa-map-marker-alt"></i> Location</ul>
+      	    <input id="Location" placeholder="Location" />
+        <ul id="mail" class="linkss"><i class="fas fa-envelope"></i><span class="hiddenLink"> Mail</span></ul>
+        	<input id="Mail" placeholder="Mail id" />
+        <ul id="linkedin" class="linkss"><i class="fab fa-linkedin"></i><span class="hiddenLink"> Linkedin</span></ul>
+        	<input id="Linkedin" placeholder="Linkedin url" />
+        <ul id="github" class="linkss"><i class="fab fa-github"></i><span class="hiddenLink">Github</span></ul>
+        	<input id="Github" placeholder="Github link" />
+        <ul id="whatsapp" class="linkss"><i class="fab fa-whatsapp"></i><span class="hiddenLink">Whatsapp</span></ul>
+        	<input id="Whatsapp" placeholder="Whatsapp number"  />
+        <ul id="instagram" class="linkss"> <i class="fa-brands fa-instagram"></i> <span class="hiddenLink">Instagram</span></ul>
+        	<input id="Instagram" placeholder="Instagram" />
+        <ul id="download" class="linkss"><i class="material-icons">download</i></ul>
+      </li>
+    </nav>
+  </header>
+  <div id="topLine"></div>
+
+  <div id="ColorSelection">
+  	<label>Color : </label>
+    <select>
+      <option value="#6d28d9" >violet</option>
+      <option value="#dc2626">Red</option>
+      <option value="#1d4ed8">Blue</option>
+      <option value="#ea580c">Orange</option>
+      <option value="#16a34a">Green</option>
+    </select>
+  </div>
+  
+  <main>
+		<div id="left">
+		  <section id="leftTop">
+        <div id="imageOuter">
+		      <div id="image"></div>
+        </div>
+        <input id="imageInput" type="file" name="" accept="image/*">
+		    <span id="content">
+		    	<h1 id="name">name</h1> <input id="Name" type="text" />
+		    	<h3 id="title">title</h3> <input id="Title" type="text" />
+		    <p id="about">✨ Describe about yourself in 2 lines — mention your background, what you do, and what you're passionate about. For example:
+"I'm a software enthusiast with a background in computer science. I love building creative web apps and learning new technologies.</p> <input id="About"  type="text"/>
+		    </span>
+		    </section>
+
+        <article id="education">
+          <div id="edu">
+        <h2 id="experience">EDUCATION</h2> <input id="Experience" type="text" name="">
+        <article id="eduBox">
+          <div id="Masters">
+            <i id="mcap" class="fa-solid fa-diamond"></i>
+            <h3 id="experienceFirst">Master of Computer Applications</h3> <input id="ExperienceFirst" type="type" name="">
+            <h4 id="experienceSecond">SRM Insititute of Science and Technoloy</h4><input id="ExperienceSecond" type="text" name="">
+            <span class="flex"> <h5 id="experienceThird">CGPA - 80</h5> <input id="ExperienceThird" type="text" name="">
+              <h5 id="experienceFourth"><strong>2022 - 2024</strong></h5> <input id="ExperienceFourth" type="text" name="">
+            </span>
+          </div>
+          <div id="Bachelors">
+            <i id="bcap" class="fa-solid fa-diamond"></i>
+            <h3 id="experienceFifth">Bachelor of Computer Science</h3>
+            <input id="ExperienceFifth" type="text" name="">
+            <h4 id="experienceSixth">Annaivailankanni arts and science college, Thanjavur</h4>
+            <input id="ExperienceSixth" type="text" name="">
+            <span class="flex"> 
+              <h5 id="experienceSeventh">Percentage - 80</h5>
+              <input id="ExperienceSeventh" type="text" name="">
+               <h5 id="experienceEighth"><strong>2019 - 2022</strong></h5>
+               <input id="ExperienceEighth" type="text" name="">
+             </span>
+          </div>
+        </article>
+        <div>
+        </article>
+        </article>
+
+		</div>
+		<div id="right">
+			<h2>TECH STACK</h2>
+      <div class="scroller">
+        <ul class="scroll-item scroller-inner">
+          <li id="techStack1">html</li> <input id="TechStack1" type="text" name="">
+          <li id="techStack2">css</li> <input id="TechStack2" type="text" name="">
+          <li id="techStack3">javascript</li> <input id="TechStack3" type="text" name="">
+          <li id="techStack4">reactjs</li> <input id="TechStack4" type="text" name="">
+          <li id="techStack5">nodejs</li> <input id="TechStack5" type="text" name="">
+          <li id="techStack6">mongodb</li> <input id="TechStack6" type="text" name="">
+        </ul>
+          <span id="addTechStack"> + ADD</span> <input id="AddTechStack" type="text" name="">
+      </div>
+      <h2>PROJECTS</h2>
+
+      <div id="project">
+        
+        <!-- <div>
+          <h5>Title</h5>
+          <p>describe about your project with clean and neat words and which  tech stack you used.</p>
+          <div>
+            Python, java, javascript
+          </div>
+        </div> -->
+
+      </div>
+          
+          <div id="addProject"> + ADD</div>
+    
+    <div id="rightBottom">
+      <span>
+        <h3 id="ac1">+15</h3> <input id="Ac1" type="text" name="">
+        <p id="ac2">Certification</p> <input id="Ac2" type="text" name="">
+      </span>
+      <span>
+        <h3 id="ac3">+5</h3> <input id="Ac3" type="text" name="">
+        <p id="ac4">Projects</p> <input id="Ac4" type="text" name="">
+      </span>
+      <span>
+        <h3 id="ac5">+5</h3> <input id="Ac5" type="text" name="">
+        <p id="ac6">Certification</p> <input id="Ac6" type="text" name="">
+      </span>
+    </div>
+
+		</div>
+	</main>
+
+  <nav id="mobNav">
+      <li id="links">
+        <ul id="location" class="linkss"><i class="fas fa-map-marker-alt"></i> Location</ul>
+            <input id="Location" placeholder="Location" />
+        <ul id="mail" class="linkss"><i class="fas fa-envelope"></i><span class="hiddenLink"> Mail</span></ul>
+          <input id="Mail" placeholder="Mail id" />
+        <ul id="linkedin" class="linkss"><i class="fab fa-linkedin"></i><span class="hiddenLink"> Linkedin</span></ul>
+          <input id="Linkedin" placeholder="Linkedin url" />
+        <ul id="github" class="linkss"><i class="fab fa-github"></i><span class="hiddenLink"> Github</span></ul>
+          <input id="Github" placeholder="Github link" />
+        <ul id="whatsapp" class="linkss"><i class="fab fa-whatsapp"></i><span class="hiddenLink"> Whatsapp</span></ul>
+          <input id="Whatsapp" placeholder="Whatsapp number"  />
+        <ul id="instagram" class="linkss"> <i class="fa-brands fa-instagram"></i> <span class="hiddenLink"> Instagram</span></ul>
+          <input id="Instagram" placeholder="Instagram" />
+        <ul id="download" class="linkss"><i class="material-icons">download</i></ul>
+      </li>
+  </nav>
+
+  <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
