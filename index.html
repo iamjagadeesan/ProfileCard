@@ -15,30 +15,16 @@
     <h2 id="shortname" tooltip="click to edit">Short name</h2>
     <input id="Shortname" type="text" />
 
-    <nav>
-      <li id="links">
-      	<ul id="location" class="linkss"><i class="fas fa-map-marker-alt"></i> Location</ul>
-      	    <input id="Location" placeholder="Location" />
-        <ul id="mail" class="linkss"><i class="fas fa-envelope"></i><span class="hiddenLink"> Mail</span></ul>
-        	<input id="Mail" placeholder="Mail id" />
-        <ul id="linkedin" class="linkss"><i class="fab fa-linkedin"></i><span class="hiddenLink"> Linkedin</span></ul>
-        	<input id="Linkedin" placeholder="Linkedin url" />
-        <ul id="github" class="linkss"><i class="fab fa-github"></i><span class="hiddenLink">Github</span></ul>
-        	<input id="Github" placeholder="Github link" />
-        <ul id="whatsapp" class="linkss"><i class="fab fa-whatsapp"></i><span class="hiddenLink">Whatsapp</span></ul>
-        	<input id="Whatsapp" placeholder="Whatsapp number"  />
-        <ul id="instagram" class="linkss"> <i class="fa-brands fa-instagram"></i> <span class="hiddenLink">Instagram</span></ul>
-        	<input id="Instagram" placeholder="Instagram" />
-        <ul id="download" class="linkss"><i class="material-icons">download</i></ul>
-      </li>
+    <nav id="lapNav">
     </nav>
+
   </header>
   <div id="topLine"></div>
 
   <div id="ColorSelection">
   	<label>Color : </label>
-    <select>
-      <option value="#6d28d9" >violet</option>
+    <select tabindex="-1">
+      <option value="#7c3aed" >violet</option>
       <option value="#dc2626">Red</option>
       <option value="#1d4ed8">Blue</option>
       <option value="#ea580c">Orange</option>
@@ -67,22 +53,22 @@
         <article id="eduBox">
           <div id="Masters">
             <i id="mcap" class="fa-solid fa-diamond"></i>
-            <h3 id="experienceFirst">Master of Computer Applications</h3> <input id="ExperienceFirst" type="type" name="">
-            <h4 id="experienceSecond">SRM Insititute of Science and Technoloy</h4><input id="ExperienceSecond" type="text" name="">
-            <span class="flex"> <h5 id="experienceThird">CGPA - 80</h5> <input id="ExperienceThird" type="text" name="">
-              <h5 id="experienceFourth"><strong>2022 - 2024</strong></h5> <input id="ExperienceFourth" type="text" name="">
+            <h3 id="experienceFirst">XYZ Degree</h3> <input id="ExperienceFirst" type="type" name="">
+            <h4 id="experienceSecond">XYZ University</h4><input id="ExperienceSecond" type="text" name="">
+            <span class="flex"> <h5 id="experienceThird">CGPA - 10</h5> <input id="ExperienceThird" type="text" name="">
+              <h5 id="experienceFourth"><strong>Year - Year</strong></h5> <input id="ExperienceFourth" type="text" name="">
             </span>
           </div>
           <div id="Bachelors">
             <i id="bcap" class="fa-solid fa-diamond"></i>
-            <h3 id="experienceFifth">Bachelor of Computer Science</h3>
+            <h3 id="experienceFifth">ABC Degree</h3>
             <input id="ExperienceFifth" type="text" name="">
-            <h4 id="experienceSixth">Annaivailankanni arts and science college, Thanjavur</h4>
+            <h4 id="experienceSixth">ABC University</h4>
             <input id="ExperienceSixth" type="text" name="">
             <span class="flex"> 
-              <h5 id="experienceSeventh">Percentage - 80</h5>
+              <h5 id="experienceSeventh">CGPA - 10</h5>
               <input id="ExperienceSeventh" type="text" name="">
-               <h5 id="experienceEighth"><strong>2019 - 2022</strong></h5>
+               <h5 id="experienceEighth"><strong>Year - Year</strong></h5>
                <input id="ExperienceEighth" type="text" name="">
              </span>
           </div>
@@ -108,15 +94,6 @@
       <h2>PROJECTS</h2>
 
       <div id="project">
-        
-        <!-- <div>
-          <h5>Title</h5>
-          <p>describe about your project with clean and neat words and which  tech stack you used.</p>
-          <div>
-            Python, java, javascript
-          </div>
-        </div> -->
-
       </div>
           
           <div id="addProject"> + ADD</div>
@@ -131,13 +108,19 @@
         <p id="ac4">Projects</p> <input id="Ac4" type="text" name="">
       </span>
       <span>
-        <h3 id="ac5">+5</h3> <input id="Ac5" type="text" name="">
-        <p id="ac6">Certification</p> <input id="Ac6" type="text" name="">
+        <h3 id="ac5">+225</h3> <input id="Ac5" type="text" name="">
+        <p id="ac6">leetcode problems</p> <input id="Ac6" type="text" name="">
       </span>
     </div>
 
 		</div>
 	</main>
+   
+   <div id="bottomLine"></div>
+
+  <nav id="mobNav">
+      
+  </nav>
 
   <script type="text/javascript" src="script.js"></script>
 </body>
