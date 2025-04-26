@@ -1,3 +1,39 @@
+
+const navElement = `<li id="links">
+        <ul id="location" class="linkss"><i class="fas fa-map-marker-alt"></i> Location</ul>
+            <input id="Location" placeholder="Location" />
+        <ul id="mail" class="linkss"><i class="fas fa-envelope"></i><span class="hiddenLink"> Mail</span></ul>
+          <input id="Mail" placeholder="Mail id" />
+        <ul id="linkedin" class="linkss"><i class="fab fa-linkedin"></i><span class="hiddenLink"> Linkedin</span></ul>
+          <input id="Linkedin" placeholder="Linkedin url" />
+        <ul id="github" class="linkss"><i class="fab fa-github"></i><span class="hiddenLink"> Github</span></ul>
+          <input id="Github" placeholder="Github link" />
+        <ul id="whatsapp" class="linkss"><i class="fab fa-whatsapp"></i><span class="hiddenLink"> Whatsapp</span></ul>
+          <input id="Whatsapp" placeholder="Whatsapp number"  />
+        <ul id="instagram" class="linkss"> <i class="fa-brands fa-instagram"></i> <span class="hiddenLink"> Instagram</span></ul>
+          <input id="Instagram" placeholder="Instagram" />
+        <ul id="download" class="linkss"><i class="material-icons">download</i></ul>
+      </li>`;
+
+const laptop = document.getElementById('lapNav');
+const mobile = document.getElementById('mobNav');
+
+function checkScreen(){
+
+if(window.innerWidth < 500){
+	laptop.innerHTML = '';
+	mobile.innerHTML = navElement;
+}
+else{
+	laptop.innerHTML = navElement;
+	mobile.innerHTML = '';
+}
+
+}
+
+checkScreen();
+window.addEventListener('resize',checkScreen());
+
 document.querySelectorAll('[title]').forEach(el => {
       el.removeAttribute('title'); 
     });
@@ -47,7 +83,7 @@ change:true
 ]
 
 const BGcolor = {
-	'#6d28d9':'linear-gradient(to right bottom, #101010, #17142e, #1c154c, #25116a, #340087)',
+	'#7c3aed':'linear-gradient(to right bottom, #101010, #17142e, #1c154c, #25116a, #340087)',
 	'#dc2626':'linear-gradient(to right bottom, #101010, #271629, #4b1032, #700026, #870300)',
 	'#1d4ed8':'linear-gradient(to right bottom, #101010, #17162c, #191b49, #141f67, #002387)',
 	'#ea580c':'linear-gradient(to right bottom, #101010, #291929, #4e1931, #721825, #852d00)',
@@ -203,6 +239,9 @@ if(e.key=='Enter'){
 	if(link?.change && input.value.trim()!==''){
 	details[link.name] = input.value.trim();
 		element.innerHTML = input.value;
+	}
+	else{
+		element.style.display = 'flex';
 	}
 }
 });
@@ -442,91 +481,3 @@ addProject.addEventListener("click",()=>{
 	projectRender();
   	project.scrollLeft = project.scrollWidth;
 })
-
-/* Project */
-
-// const project = document.getElementById('project');
-
-// function projectRender(){
-// 	project.innerHTML = '';
-// 	details.project.forEach((pro,index)=>{
-
-// 		const container = document.createElement('div');
-// 		const title = document.createElement('h5');
-// 		title.textContent = pro.title;
-// 		title.style.display = 'block';
-// 		container.appendChild(title);
-// 		const titleInput = document.createElement('input');
-// 		titleInput.setAttribute('type','text');
-// 		titleInput.style.display = 'none';
-// 		container.appendChild(titleInput);
-// 		title.addEventListener("click", ProjectClick(index,'title',title,titleInput));
-// 		const description = document.createElement('p');
-// 		description.textContent = pro.description;
-// 		container.appendChild(description);
-// 		const desInput = document.createElement('input');
-// 		desInput.setAttribute('type','text');
-// 		desInput.style.display = 'none';
-// 		container.appendChild(desInput);
-// 		description.addEventListener("click", ProjectClick(index,'title',title,titleInput));
-// 		const techstack = document.createElement('div');
-// 		techstack.textContent = pro.techstack;
-// 		container.appendChild(techstack);
-// 		const techstackInput = document.createElement('input');
-// 		techstackInput.setAttribute('type','text');
-// 		techstackInput.style.display = 'none'; 
-// 		container.appendChild(techstackInput);
-// 		techstack.addEventListener("click", ProjectClick(index,'title',title,titleInput));
-
-// 		project.appendChild(container);
-// 	})
-// }
-
-// projectRender();
-
-// function ProjectClick (index,head,title,titleInput) {
-// 	title.style.display = 'none';
-// 	titleInput.style.display = 'block';
-// 	titleInput.focus();
-// 	titleInput.keydown = (e) => {
-// 		if(e.key=='Enter'){
-// 			if(titleInput.value!==''){
-// 				details.project[index][head]=titleInput.value;
-// 			}
-// 			title.style.display = 'block';
-// 			titleInput.style.display = 'none';
-// 			projectRender();
-// 		}
-// 	}
-
-// }
-
-
-/*		Scrolling Effect 		*/
-
-// const scrollers = document.querySelectorAll(".scroller");
-
-
-// if (scrollers.length > 0 && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-//   addAnimation();
-// }
-
-
-// function addAnimation() {
-//   scrollers.forEach(scroller => {
-//     scroller.setAttribute("data-animated", true);
-
-//     const scrollerInner = scroller.querySelector('.scroller-inner');
-//     const scrollerContent = Array.from(scrollerInner.children);
-
-//     console.log(scrollerContent);
-
-//     scrollerContent.forEach(item => {
-//       const duplicatedItem = item.cloneNode(true);
-//       duplicatedItem.setAttribute('aria-hidden', true);
-//       scrollerInner.appendChild(duplicatedItem);
-//     });
-//   });
-// }
-
-
