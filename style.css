@@ -422,6 +422,7 @@ h1{
 }
 #project > div > div {
   font-size: .8rem;
+  text-align: center;
   color: whitesmoke;
   width: 90%;
   display: flex;
@@ -571,7 +572,7 @@ span > h3{
   gap: .2rem;
 }
 .linkss{
-	color:whitesmoke;
+  color: whitesmoke;
   font-family: sans-serif;
   padding: 1rem;
   margin: 0;
@@ -584,8 +585,8 @@ span > h3{
   letter-spacing:1px;
 }
 #download{
-  grid-column: 1 / 3; /* Span across both columns */
-  text-align: center; /* Center the icon inside */
+  grid-column: 1 / 3;
+  text-align: center;
   margin: 2rem;
 }
   main{
@@ -601,6 +602,7 @@ span > h3{
   }
   h1{
       max-width: 95vw;
+      text-align: center;
   }
   #About{
     width: 90vw;
@@ -655,8 +657,8 @@ nav{
 }
 #mobNav{
   display: block;
-	width:100vw;
-	overflow-x:hidden;
+  width: 100vw;
+  overflow-x: hidden;
   max-width: 100vw;
 }
 #rightBottom{
@@ -665,5 +667,8 @@ nav{
 #rightBottom > span {
   height: 5rem;
   width: 5rem;
+}
+#download::after{
+  content: ' Download';
 }
 }
